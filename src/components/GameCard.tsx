@@ -4,13 +4,15 @@ import CardContainer from "./CardContainer";
 import Emojies from "./Emojies";
 import GameMetaScore from "./GameMetaScore";
 import PlatformIcons from "./PlatformIcons";
+import { scale } from "framer-motion";
 interface Props {
   game: Game;
 }
 const GameCard = ({ game }: Props) => {
   return (
     <CardContainer>
-      <Card>
+      <Card
+      >
         <Img src={game.background_image} />
         <CardBody>
           <HStack justifyContent={"space-between"}>
