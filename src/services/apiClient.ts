@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 export interface FetchData<T>{
     count:number,
     results:T[]
@@ -17,7 +17,7 @@ const InstanceApiClient = axios.create({
           this.endpoint=endpoint  
         }
 
-        getAll=()=>InstanceApiClient.get<FetchData<T>>(this.endpoint).then(res=>res.data)
+        getAll=(config:AxiosRequestConfig)=>InstanceApiClient.get<FetchData<T>>(this.endpoint,config).then(res=>res.data)
     }
 
 export default ApiClient

@@ -8,19 +8,25 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronBarDown } from "react-icons/bs";
 import useplatforms from "../hooks/useplatforms";
+import usegameStoreQuery from "../store";
 
 const PlatformList = () => {
   const { data: platforms, error } = useplatforms();
+  const setPlatformId = usegameStoreQuery((s) => s.setplatformId);
+  const selectedId = usegameStoreQuery((s) => s.gameQuery.platformId);
+  const selectedPlatform = platforms?.results.find((p) => p.id == selectedId);
   if (error) return <Text>{error.message}</Text>;
   return (
-    <Menu >
+    <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronBarDown />}>
         {" "}
-        Platforms
+        {selectedPlatform ? selectedPlatform.name : "Platforms"}
       </MenuButton>
       <MenuList>
         {platforms?.results.map((p) => (
-          <MenuItem key={p.id}>{p.name}</MenuItem>
+          <MenuItem onClick={() => setPlatformId(p.id)} key={p.id}>
+            {p.name}
+          </MenuItem>
         ))}
       </MenuList>
     </Menu>
