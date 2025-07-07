@@ -13,3 +13,10 @@ export interface Game{
     parent_platforms:{platform:Platform}[],
     rating_top:number
 }
+
+export interface Genre{
+    id:number,
+    name:string,
+    slug:string,
+    image_background:string
+}

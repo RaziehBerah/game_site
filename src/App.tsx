@@ -1,5 +1,6 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import GameGrid from "./components/GameGrid";
+import GenresList from "./components/GenresList";
 import Navbar from "./components/Navbar";
 
 const App = () => {
@@ -12,8 +13,8 @@ const App = () => {
         <Navbar />
       </GridItem>
       <Show above="lg">
-        <GridItem area={"aside"} bgColor={"yellow"}>
-          Aside
+        <GridItem area={"aside"}>
+          <GenresList />
         </GridItem>
       </Show>
 
