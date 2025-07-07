@@ -20,3 +20,8 @@ export interface Genre{
     slug:string,
     image_background:string
 }
+
+export interface Platform{
+    id:number,
+    name:string
+}
