@@ -6,6 +6,7 @@ const App = () => {
   return (
     <Grid
       templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
+      gridTemplateColumns={{ base: "1fr", lg: "200px 1fr" }}
     >
       <GridItem area={"nav"}>
         <Navbar />
