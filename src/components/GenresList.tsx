@@ -8,9 +8,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 import usegenres from "../hooks/usegenres";
+import usegameStoreQuery from "../store";
 
 const GenresList = () => {
   const { data: genres, error, isLoading } = usegenres();
+  const setGenreId = usegameStoreQuery((s) => s.setgenreId);
+  const selectedId = usegameStoreQuery((s) => s.gameQuery.genreId);
+
   if (error) return <Text>{error.message}</Text>;
   if (isLoading) return <Spinner />;
   return (
@@ -25,7 +29,13 @@ const GenresList = () => {
               objectFit={"cover"}
               borderRadius={"5px"}
             />
-            <Button variant={"link"} whiteSpace={"normal"} textAlign={"left"}>
+            <Button
+              variant={"link"}
+              fontWeight={genre.id == selectedId ? "bold" : "normal"}
+              whiteSpace={"normal"}
+              textAlign={"left"}
+              onClick={() => setGenreId(genre.id)}
+            >
               {genre.name}
             </Button>
           </HStack>
