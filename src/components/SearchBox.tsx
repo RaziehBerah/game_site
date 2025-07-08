@@ -2,10 +2,12 @@ import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useRef } from "react";
 import { CiSearch } from "react-icons/ci";
 import usegameStoreQuery from "../store";
+import { useNavigate } from "react-router-dom";
 
 const SearchBox = () => {
   const ref = useRef<HTMLInputElement>(null);
   const setSearchText = usegameStoreQuery((s) => s.setSearchText);
+  const Navigate=useNavigate()
   return (
     <form
       style={{ width: "100%" }}
@@ -15,6 +17,7 @@ const SearchBox = () => {
           setSearchText(ref.current?.value);
           ref.current.value = "";
         }
+        Navigate("/")
       }}
     >
       <InputGroup>
