@@ -19,6 +19,8 @@ const InstanceApiClient = axios.create({
         }
 
         getAll=(config:AxiosRequestConfig)=>InstanceApiClient.get<FetchData<T>>(this.endpoint,config).then(res=>res.data)
+
+        getGameDetails=(id:string)=>InstanceApiClient.get<T>(`${this.endpoint}/${id}`).then(res=>res.data)
     }
 
 export default ApiClient

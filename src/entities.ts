@@ -11,7 +11,8 @@ export interface Game{
     background_image:string,
     metacritic:number,
     parent_platforms:{platform:Platform}[],
-    rating_top:number
+    rating_top:number,
+    description_raw:string
 }
 
 export interface Genre{

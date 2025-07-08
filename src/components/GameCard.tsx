@@ -1,22 +1,24 @@
 import { Card, CardBody, Heading, HStack, Img } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { Game } from "../entities";
 import CardContainer from "./CardContainer";
 import Emojies from "./Emojies";
 import GameMetaScore from "./GameMetaScore";
 import PlatformIcons from "./PlatformIcons";
-import { scale } from "framer-motion";
 interface Props {
   game: Game;
 }
 const GameCard = ({ game }: Props) => {
   return (
     <CardContainer>
-      <Card
-      >
+      <Card>
         <Img src={game.background_image} />
         <CardBody>
           <HStack justifyContent={"space-between"}>
-            <Heading fontSize={"xl"}>{game.name}</Heading>
+            <Link to={`/games/${game.slug}`}>
+              <Heading fontSize={"xl"}>{game.name}</Heading>
+            </Link>
+
             <GameMetaScore score={game.metacritic} />
           </HStack>
           <HStack justifyContent={"space-between"} marginY={"2px"}>
