@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
 export interface FetchData<T>{
     count:number,
+    next?:number
     results:T[]
 }
 const InstanceApiClient = axios.create({
