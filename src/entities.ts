@@ -4,6 +4,12 @@ export interface Platform{
     slug:string
 }
 
+export interface Publisher{
+    id:number,
+    name:string,
+    slug:string
+}
+
 export interface Game{
     id:number,
     name:string,
@@ -11,6 +17,8 @@ export interface Game{
     background_image:string,
     metacritic:number,
     parent_platforms:{platform:Platform}[],
+    genres:Genre[],
+    publishers:Publisher[]
     rating_top:number,
     description_raw:string
 }
