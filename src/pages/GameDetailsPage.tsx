@@ -1,8 +1,9 @@
 import { GridItem, Heading, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ExpandbleText from "../components/ExpandbleText";
-import usegameDetails from "../hooks/usegameDetails";
 import GameAttributes from "../components/GameAttributes";
+import GameTrailer from "../components/GameTrailer";
+import usegameDetails from "../hooks/usegameDetails";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -11,14 +12,14 @@ const GameDetailsPage = () => {
   if (isLoading) return <Spinner />;
   if (!game) return <Text>No Data Available</Text>;
   return (
-    <SimpleGrid >
+    <SimpleGrid columns={2}>
       <GridItem>
         <Heading>{game.name}</Heading>
         <ExpandbleText text={game.description_raw} />
-        <GameAttributes game={game}/>
+        <GameAttributes game={game} />
       </GridItem>
       <GridItem>
-        
+        <GameTrailer id={game.id} />
       </GridItem>
     </SimpleGrid>
   );

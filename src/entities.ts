@@ -10,6 +10,13 @@ export interface Publisher{
     slug:string
 }
 
+export interface Trailer{
+    id:number,
+    name:string,
+    preview:string,
+    data:{480:string, max:string}
+}
+
 export interface Game{
     id:number,
     name:string,
