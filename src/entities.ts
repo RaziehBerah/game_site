@@ -17,6 +17,11 @@ export interface Trailer{
     data:{480:string, max:string}
 }
 
+export interface  Screenshot{
+id:number,
+image:string
+}
+
 export interface Game{
     id:number,
     name:string,
