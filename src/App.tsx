@@ -1,4 +1,5 @@
 import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import DynamicHeading from "./components/DynamicHeading";
 import GameGrid from "./components/GameGrid";
 import GenresList from "./components/GenresList";
 import Navbar from "./components/Navbar";
@@ -21,6 +22,7 @@ const App = () => {
       </Show>
 
       <GridItem area={"main"}>
+        <DynamicHeading />
         <HStack marginBottom={"5px"}>
           <PlatformList />
           <SortOrderList />
