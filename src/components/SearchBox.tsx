@@ -21,7 +21,8 @@ const SearchBox = () => {
       }}
     >
       <InputGroup>
-        <InputLeftElement children={<CiSearch />} />
+      <InputLeftElement pointerEvents="none"><CiSearch/></InputLeftElement>
+       
         <Input
           placeholder="Search..."
           borderRadius={"15px"}

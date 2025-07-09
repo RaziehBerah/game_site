@@ -6,7 +6,7 @@ import {
   MenuList,
   Text,
 } from "@chakra-ui/react";
-import { BsChevronBarDown } from "react-icons/bs";
+import { BsChevronDown } from "react-icons/bs";
 import useplatforms from "../hooks/useplatforms";
 import usegameStoreQuery from "../store";
 
@@ -18,7 +18,7 @@ const PlatformList = () => {
   if (error) return <Text>{error.message}</Text>;
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronBarDown />}>
+      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
         {" "}
         {selectedPlatform ? selectedPlatform.name : "Platforms"}
       </MenuButton>

@@ -1,5 +1,5 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import { BsChevronBarDown } from "react-icons/bs";
+import { BsChevronDown } from "react-icons/bs";
 import usegameStoreQuery from "../store";
 
 const SortOrderList = () => {
@@ -15,7 +15,7 @@ const SortOrderList = () => {
   const selectedTitle = sortOrders.find((s) => s.value == selectedOrder);
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronBarDown />}>
+      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
         {selectedTitle ? `Sort By ${selectedTitle.label}` : "Sort By"}
       </MenuButton>
       <MenuList>
